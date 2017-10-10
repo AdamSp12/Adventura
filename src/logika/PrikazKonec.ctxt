@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=hra
+comment0.target=PrikazKonec(Hra)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy\r\n\ \ \r\n\ \ @param\ hra\ odkaz\ na\ hru,\ kter\u00E1\ m\u00E1\ b\u00FDt\ p\u0159\u00EDkazem\ konec\ ukon\u010Dena\r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ proved(java.lang.String[])
+comment1.text=\r\n\ V\ p\u0159\u00EDpad\u011B,\ \u017Ee\ p\u0159\u00EDkaz\ m\u00E1\ jen\ jedno\ slovo\ "konec"\ hra\ kon\u010D\u00ED(vol\u00E1\ se\ metoda\ setKonecHry(true))\r\n\ jinak\ pokra\u010Duje\ nap\u0159.\ p\u0159i\ zad\u00E1n\u00ED\ "konec\ a".\r\n\ \r\n\ @return\ zpr\u00E1va,\ kterou\ vyp\u00ED\u0161e\ hra\ hr\u00E1\u010Di\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @\ return\ nazev\ prikazu\r\n
+numComments=3

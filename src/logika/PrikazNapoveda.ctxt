@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=platnePrikazy
+comment0.target=PrikazNapoveda(SeznamPrikazu)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy\r\n\ \ \r\n\ \ @param\ platnePrikazy\ seznam\ p\u0159\u00EDkaz\u016F,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kter\u00E9\ je\ mo\u017En\u00E9\ ve\ h\u0159e\ pou\u017E\u00EDt,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aby\ je\ n\u00E1pov\u011Bda\ mohla\ zobrazit\ u\u017Eivateli.\ \r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ proved(java.lang.String[])
+comment1.text=\r\n\ \ Vrac\u00ED\ z\u00E1kladn\u00ED\ n\u00E1pov\u011Bdu\ po\ zad\u00E1n\u00ED\ p\u0159\u00EDkazu\ "napoveda".\ Nyn\u00ED\ se\ vypisuje\r\n\ \ vcelku\ primitivn\u00ED\ zpr\u00E1va\ a\ seznam\ dostupn\u00FDch\ p\u0159\u00EDkaz\u016F.\r\n\ \ \r\n\ \ @return\ napoveda\ ke\ hre\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @\ return\ nazev\ prikazu\r\n
+numComments=3

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HerniPlan()
+comment0.text=\r\n\ \ Konstruktor\ kter\u00FD\ vytv\u00E1\u0159\u00ED\ jednotliv\u00E9\ prostory\ a\ propojuje\ je\ pomoc\u00ED\ v\u00FDchod\u016F.\r\n\ \ \r\n
+comment1.params=
+comment1.target=void\ zalozProstoryHry()
+comment1.text=\r\n\ \ Vytv\u00E1\u0159\u00ED\ jednotliv\u00E9\ prostory\ a\ propojuje\ je\ pomoc\u00ED\ v\u00FDchod\u016F.\r\n\ \ Jako\ v\u00FDchoz\u00ED\ aktu\u00E1ln\u00ED\ prostor\ nastav\u00ED\ doma.\r\n
+comment2.params=
+comment2.target=Prostor\ getAktualniProstor()
+comment2.text=\r\n\ \ Metoda\ vrac\u00ED\ odkaz\ na\ aktu\u00E1ln\u00ED\ prostor,\ ve\ ktet\u00E9m\ se\ hr\u00E1\u010D\ pr\u00E1v\u011B\ nach\u00E1z\u00ED.\r\n\r\n@return\ \ \ \ \ aktu\u00E1ln\u00ED\ prostor\r\n
+comment3.params=prostor
+comment3.target=void\ setAktualniProstor(Prostor)
+comment3.text=\r\n\ \ Metoda\ nastav\u00ED\ aktu\u00E1ln\u00ED\ prostor,\ pou\u017E\u00EDv\u00E1\ se\ nej\u010Dast\u011Bji\ p\u0159i\ p\u0159echodu\ mezi\ prostory\r\n\r\n@param\ \ prostor\ nov\u00FD\ aktu\u00E1ln\u00ED\ prostor\r\n
+comment4.params=
+comment4.target=boolean\ hracVyhral()
+comment4.text=\r\n\ \ Metoda\ vrac\u00ED\ true\ pokud\ hr\u00E1\u010D\ vyhr\u00E1l\ ofici\u00E1ln\u00ED\ cestou\ (tj.\ do\u0161el\ do\ c\u00EDlov\u00E9ho\ prostoru\ s\r\n\ \ alespo\u0148\ 50000,-\r\n\ \ \r\n\ \ @return\ hr\u00E1\u010D\ vyhr\u00E1l\ ofici\u00E1ln\u00ED\ cestou\r\n
+comment5.params=
+comment5.target=Inventar\ getInventar()
+comment5.text=\r\n\ \ Metoda\ vrac\u00ED\ odkaz\ na\ invent\u00E1\u0159\ pou\u017E\u00EDvan\u00FD\ v\ t\u00E9to\ h\u0159e\r\n\ \ \r\n\ \ @return\ Invent\u00E1\u0159\r\n
+numComments=6

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=hPlan
+comment0.target=PrikazSeber(HerniPlan)
+comment0.text=\r\n\ \ Konstruktor\ ....\r\n\ \ \r\n\ \ \ @param\ hPlan\ \ \ hern\u00ED\ pl\u00E1n,\ ve\ kter\u00E9m\ se\ bude\ ve\ h\u0159e\ "chodit"\ \r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ proved(java.lang.String[])
+comment1.text=\r\n\ \ Metoda\ sb\u00EDr\u00E1\ v\u011Bci,\ kter\u00E9\ se\ nach\u00E1zej\u00ED\ v\ prostoru\ a\ kter\u00E9\ jdou\ sebrat,\ \r\n\ \ vkl\u00E1d\u00E1\ je\ potom\ do\ inven\u00E1\u0159e\r\n\ \ Chybov\u00E9\ hl\u00E1\u0161en\u00ED\ se\ vyp\u00ED\u0161e\ pokud\ nen\u00ED\ zad\u00E1n\ parametr,\ invent\u00E1\u0159\ ji\u017E\ danou\ v\u011Bc\ obsahuje\r\n\ \ v\ inven\u00E1\u0159i\ nen\u00ED\ m\u00EDsto,\ pokud\ dan\u00E1\ v\u011Bc\ nen\u00ED\ p\u0159enositeln\u00E1,\ pokud\ nem\u00E1me\ dostatek\ pen\u011Bz\r\n\r\n@param\ parametr\ \ \ n\u00E1zev\ v\u011Bci\r\n@return\ v\u00FDpis\ pro\ p\u0159\u00EDkaz\ seber\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+numComments=3

@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=nazev\ popis\ jePrenositelna
+comment0.target=Vec(java.lang.String,\ java.lang.String,\ boolean)
+comment0.text=\r\n\ \ Konstruktor\ ....\r\n\ \ \r\n\ \ @param\ nazev\ \ \ \ \ \ \ \ \ \ \ \ n\u00E1zev\ v\u011Bci\r\n\ \ @param\ popis\ \ \ \ \ \ \ \ \ \ \ \ popis\ v\u011Bci\ (vyp\u00ED\u0161e\ se\ p\u0159\u00EDkazem\ prozkoumej)\r\n\ \ @param\ jePrenositelna\ \ \ uchov\u00E1v\u00E1\ informaci\ o\ tom,\ zda\ se\ d\u00E1\ v\u011Bc\ d\u00E1t\ do\ invent\u00E1\u0159e\ \r\n
+comment1.params=nazev\ popis\ jePrenositelna\ bylaProhledana
+comment1.target=Vec(java.lang.String,\ java.lang.String,\ boolean,\ boolean)
+comment1.text=\r\n\ \ Konstruktor\ ....\r\n\ \ \r\n\ \ @param\ nazev\ \ \ \ \ \ \ \ \ \ \ \ n\u00E1zev\ v\u011Bci\r\n\ \ @param\ popis\ \ \ \ \ \ \ \ \ \ \ \ popis\ v\u011Bci\ (vyp\u00ED\u0161e\ se\ p\u0159\u00EDkazem\ prozkoumej)\r\n\ \ @param\ jePrenositelna\ \ \ uchov\u00E1v\u00E1\ informaci\ o\ tom,\ zda\ se\ d\u00E1\ v\u011Bc\ d\u00E1t\ do\ invent\u00E1\u0159e\r\n\ \ @param\ bylaProhledana\ \ \ u\ p\u0159edm\u011Bt\u016F,\ u\ kter\u00FDch\ je\ v\u00FDznamn\u00E9\ zda\ ji\u017E\ byly\ prohled\u00E1ny,\ se\ uchov\u00E1v\u00E1\ tato\ informace\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\ Metoda\ vrac\u00ED\ n\u00E1zev\ v\u011Bci.\r\n\ \r\n\ @return\ n\u00E1zev\ v\u011Bci\r\n
+comment3.params=
+comment3.target=java.lang.String\ getPopis()
+comment3.text=\r\n\ Metoda\ vrac\u00ED\ popis\ v\u011Bci.\r\n\ \r\n\ @return\ popis\ v\u011Bci\r\n
+comment4.params=popis
+comment4.target=void\ setPopis(java.lang.String)
+comment4.text=\r\n\ Metoda\ nastav\u00ED\ popis\ v\u011Bci\r\n\ \r\n\ @param\ popis\ v\u011Bci\r\n
+comment5.params=
+comment5.target=boolean\ jePrenositelna()
+comment5.text=\r\n\ Metoda\ vrac\u00ED\ p\u0159enositelnost\ v\u011Bci.\r\n\ \r\n\ @return\ hodnota\ p\u0159enositelnosti\r\n
+comment6.params=
+comment6.target=boolean\ bylaProhledana()
+comment6.text=\r\n\ Metoda\ vrac\u00ED\ informaci\ o\ tom,\ zda\ byla\ v\u011Bc\ ji\u017E\ prohled\u00E1na\r\n\ \r\n\ @return\ true\ pokud\ byla\ prohled\u00E1na\r\n
+comment7.params=hodnota
+comment7.target=void\ setProhledana(boolean)
+comment7.text=\r\n\ Metoda\ nastav\u00ED,\ \u017Ee\ v\u011Bc\ ji\u017E\ byla\ prohled\u00E1na\r\n\ \r\n\ @param\ true\ pokud\ byla\ prohled\u00E1na\r\n
+numComments=8

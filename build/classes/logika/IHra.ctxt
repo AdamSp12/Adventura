@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ vratUvitani()
+comment0.text=\r\n\ \ Vr\u00E1t\u00ED\ \u00FAvodn\u00ED\ zpr\u00E1vu\ pro\ hr\u00E1\u010De.\r\n\ \ \r\n\ \ @return\ \ vrac\u00ED\ se\ \u0159et\u011Bzec,\ kter\u00FD\ se\ m\u00E1\ vypsat\ na\ obrazovku\r\n
+comment1.params=
+comment1.target=java.lang.String\ vratEpilog()
+comment1.text=\r\n\ \ Vr\u00E1t\u00ED\ z\u00E1v\u011Bre\u010Dnou\ zpr\u00E1vu\ pro\ hr\u00E1\u010De.\r\n\ \ \r\n\ \ @return\ \ vrac\u00ED\ se\ \u0159et\u011Bzec,\ kter\u00FD\ se\ m\u00E1\ vypsat\ na\ obrazovku\r\n
+comment2.params=
+comment2.target=boolean\ konecHry()
+comment2.text=\ \r\n\ Vrac\u00ED\ informaci\ o\ tom,\ zda\ hra\ ji\u017E\ skon\u010Dila,\ je\ jedno\ zda\ v\u00FDhrou,\ prohrou\ nebo\ p\u0159\u00EDkazem\ konec.\r\n\ \r\n\ @return\ \ \ vrac\u00ED\ true,\ pokud\ hra\ skon\u010Dila\r\n
+comment3.params=radek
+comment3.target=java.lang.String\ zpracujPrikaz(java.lang.String)
+comment3.text=\r\n\ \ Metoda\ zpracuje\ \u0159et\u011Bzec\ uveden\u00FD\ jako\ parametr,\ rozd\u011Bl\u00ED\ ho\ na\ slovo\ p\u0159\u00EDkazu\ a\ dal\u0161\u00ED\ parametry.\r\n\ \ Pak\ otestuje\ zda\ p\u0159\u00EDkaz\ je\ kl\u00ED\u010Dov\u00FDm\ slovem\ \ nap\u0159.\ jdi.\r\n\ \ Pokud\ ano\ spust\u00ED\ samotn\u00E9\ prov\u00E1d\u011Bn\u00ED\ p\u0159\u00EDkazu.\r\n\r\n@param\ \ radek\ \ text,\ kter\u00FD\ zadal\ u\u017Eivatel\ jako\ p\u0159\u00EDkaz\ do\ hry.\r\n@return\ \ \ \ \ \ \ \ \ \ vrac\u00ED\ se\ \u0159et\u011Bzec,\ kter\u00FD\ se\ m\u00E1\ vypsat\ na\ obrazovku\r\n
+comment4.params=
+comment4.target=HerniPlan\ getHerniPlan()
+comment4.text=\r\n\ \ Metoda\ vr\u00E1t\u00ED\ odkaz\ na\ hern\u00ED\ pl\u00E1n,\ je\ vyu\u017Eita\ hlavn\u011B\ v\ testech,\r\n\ \ kde\ se\ jej\u00EDm\ prost\u0159ednictv\u00EDm\ z\u00EDsk\u00E1v\u00E1\ aktualn\u00ED\ m\u00EDstnost\ hry.\r\n\ \ \r\n\ \ @return\ \ \ \ \ odkaz\ na\ hern\u00ED\ pl\u00E1n\r\n
+numComments=5

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=parametry
+comment0.target=java.lang.String\ proved(java.lang.String[])
+comment0.text=\r\n\ \ Metoda\ pro\ proveden\u00ED\ p\u0159\u00EDkazu\ ve\ h\u0159e.\r\n\ \ Po\u010Det\ parametr\u016F\ je\ z\u00E1visl\u00FD\ na\ konkr\u00E9tn\u00EDm\ p\u0159\u00EDkazu,\r\n\ \ nap\u0159.\ p\u0159\u00EDkazy\ konec\ a\ napoveda\ nemaj\u00ED\ parametry\r\n\ \ p\u0159\u00EDkazy\ jdi,\ seber,\ polo\u017E\ maj\u00ED\ jeden\ parametr\r\n\ \ p\u0159\u00EDkaz\ pouzij\ m\u016F\u017Ee\ m\u00EDt\ dva\ parametry.\r\n\ \ \r\n\ \ @param\ parametry\ po\u010Det\ parametr\u016F\ z\u00E1vis\u00ED\ na\ konkr\u00E9tn\u00EDm\ p\u0159\u00EDkazu.\r\n\ \ \r\n
+comment1.params=
+comment1.target=java.lang.String\ getNazev()
+comment1.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @return\ nazev\ prikazu\r\n
+numComments=2
