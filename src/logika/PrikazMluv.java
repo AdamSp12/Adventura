@@ -48,12 +48,18 @@ public class PrikazMluv implements IPrikaz
         {
             prostor.vlozVec(hPlan.hodinky);
             prostor.odeberPostavu("kamarad");
+            updateHerniPlan();
             return postava.getRec() + "\n" + hPlan.getInventar().zvysStavPenez(5000);
         }
+        updateHerniPlan();
         return postava.getRec();
     }
     
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
 }

@@ -61,7 +61,7 @@ public class PrikazVsad implements IPrikaz
             return "Nedostatek peněz";
         }
         String barva = parametry[1];
-        if (!(barva.equals("cervená") || barva.equals("cerná")))
+        if (!(barva.equals("cervena") || barva.equals("cerna")))
         {
             return "Tuto barvu neznám. \n" + "Lze sázet pouze na cervenou nebo cernou barvu";
         }
@@ -76,7 +76,7 @@ public class PrikazVsad implements IPrikaz
         {
             vypis = hPlan.getInventar().snizStavPenez(castka);
         }
-        
+        updateHerniPlan();
         return vypis;
     }
     
@@ -97,6 +97,10 @@ public class PrikazVsad implements IPrikaz
     
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
 }
 

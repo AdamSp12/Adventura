@@ -37,6 +37,7 @@ class PrikazKonec implements IPrikaz {
         }
         else {
             hra.setKonecHry(true);
+            updateHerniPlan();
             return "hra ukončena příkazem konec";
         }
     }
@@ -49,5 +50,9 @@ class PrikazKonec implements IPrikaz {
     @Override
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hra.getHerniPlan().notifyAllObservers();
     }
 }

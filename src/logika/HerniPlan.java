@@ -1,4 +1,10 @@
 package logika;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import utils.Observer;
+import utils.Subject;
 
 
 /**
@@ -11,11 +17,16 @@ package logika;
  * @author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Jan Riha, Adam Spivák
  * @version    ZS 2016/2017
  */
-public class HerniPlan {
+public class HerniPlan implements Subject {
 
     static final String CILOVY_PROSTOR = "predmesti";
     private Inventar inventar;
+    private Map<String, Prostor> prostory;
     private Prostor aktualniProstor;
+    private boolean znaObchod;
+    private boolean znaBazar;
+    
+    private List<Observer> listObserveru = new ArrayList<Observer>();
     
     //vytvoření věcí, prostorů a postav, které nejsou ve hře hned od vytvoření hry.
     Vec mobil = new Vec("mobil", "Příkazem volej <číslo> zavoláš na zadané číslo", true);
@@ -25,15 +36,16 @@ public class HerniPlan {
     Vec hodinky = new Vec("hodinky", "Staré zlaté hodinky", true);
     Prostor obchod = new Prostor("obchod","obchod s alkoholem\n" + 
                     "nic jiného, než alkohol si tu bohužel nekoupíš\n" + 
-                    "flaška vodky stojí 200,-");
-    Prostor doma = new Prostor("doma","tvůj domov");
+                    "flaška vodky stojí 200,-", false, 300, 230);
+    Prostor doma = new Prostor("doma","tvůj domov", false, 30, 30);
     Prostor park = new Prostor("park", "park, ve kterém se nachází bezdomovec\n" +
-                   "poblíž se nachází popelnice");
-    Prostor bazar = new Prostor("bazar","bazar, ve kterém se dají prodat věci");
-    Prostor kasino = new Prostor("kasino","kasino, ve kterém lze hrát ruletu");
-    Prostor predmesti = new Prostor("predmesti", "předměstí \n" + "Gratuluji, vyhrál jsi!!!");
+                   "poblíž se nachází popelnice", false, 300, 30);
+    Prostor bazar = new Prostor("bazar","bazar, ve kterém se dají prodat věci", false, 30, 230);
+    Prostor kasino = new Prostor("kasino","kasino, ve kterém lze hrát ruletu", false, 300, 130);
+    Prostor predmesti = new Prostor("predmesti", "předměstí \n" + "Gratuluji, vyhrál jsi!!!", false, 30, 130);
     Postava kamarad = new Postava("kamarad", "Ahoj, tady máš nějaký peníze a zlatý hodinky. \n" +
                                   "Doufám, že ti to trochu pomůže");
+    
     /**
      *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
      *  
@@ -91,8 +103,18 @@ public class HerniPlan {
         bazar.vlozPostavu(zamestnanec);
 
         aktualniProstor = doma;  // hra začíná doma
+        //kolekce prostoru
+        prostory = new HashMap<>();
+        
+            prostory.put(doma.getNazev(), doma);
+            prostory.put(park.getNazev(), park);
+            prostory.put(bazar.getNazev(), bazar);
+            prostory.put(obchod.getNazev(), obchod);
+            prostory.put(predmesti.getNazev(), predmesti);
+            prostory.put(kasino.getNazev(), kasino);
+
     }
-    
+       
     /**
      *  Metoda vrací odkaz na aktuální prostor, ve ktetém se hráč právě nachází.
      *
@@ -110,6 +132,12 @@ public class HerniPlan {
      */
     public void setAktualniProstor(Prostor prostor) {
        aktualniProstor = prostor;
+       notifyAllObservers();
+    }
+    
+    public Prostor vyberProstor(String nazevProstoru){
+        
+        return prostory.get(nazevProstoru);
     }
     
     /**
@@ -135,4 +163,21 @@ public class HerniPlan {
     {
         return inventar;
     }
+    @Override
+    public void registerObserver(Observer observer) {
+        listObserveru.add(observer);
+    }
+
+    @Override
+    public void deleteObserver(Observer observer) {
+        listObserveru.remove(observer);
+    }
+
+    @Override
+    public void notifyAllObservers() {
+        for (Observer listObserveruItem : listObserveru) {
+            listObserveruItem.update();
+        }
+    }
+    
 }

@@ -48,12 +48,15 @@ class PrikazJdi implements IPrikaz {
         }
         if (smer.equals(plan.CILOVY_PROSTOR) && plan.getInventar().stavPenez() < 50000)
         {
+            plan.setAktualniProstor(sousedniProstor);
             hra.setKonecHry(true);
+            updateHerniPlan();
             return "Prohrál jsi, neměl jsi sem chodit bez\n" +
             "potřebných peněz";
         }
         else {
             plan.setAktualniProstor(sousedniProstor);
+            updateHerniPlan();
             return sousedniProstor.dlouhyPopis();
         }
     }
@@ -66,6 +69,10 @@ class PrikazJdi implements IPrikaz {
     @Override
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        plan.notifyAllObservers();
     }
 
 }

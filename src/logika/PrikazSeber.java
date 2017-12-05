@@ -50,7 +50,7 @@ public class PrikazSeber implements IPrikaz
                     return jmenoVeci + " se zde nenachází";
                 }        
 
-        if(inventar.getInventar().containsKey(jmenoVeci))
+        if(inventar.getObsahInventare().containsKey(jmenoVeci))
         {
             return "Vícekrát tuto věc v inventáři mít nemůžeš";
         }
@@ -84,13 +84,26 @@ public class PrikazSeber implements IPrikaz
             return jmenoVeci + " se nedá sebrat \n" + vypis;
         }
         
-        return inventar.dejDoInventare(vec) + vypis;
+        return
+        inventar.dejDoInventare(vec) + update() + vypis;
+    
+        
 
         }
         @Override
     public String getNazev() {
         return NAZEV;
     }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
+    }
+    
+    public String update()
+            {
+             hPlan.notifyAllObservers();
+             return "";
+            }
 }
 
  

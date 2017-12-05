@@ -94,12 +94,16 @@ public class PrikazProhledej implements IPrikaz
             break;
             
         }
-        
+        updateHerniPlan();
         return vypis;
     }
     
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
 
     //== Soukromé metody (instancí i třídy) ========================================

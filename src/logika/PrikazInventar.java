@@ -45,4 +45,8 @@ public class PrikazInventar implements IPrikaz
     public String getNazev() {
         return NAZEV;
     }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
+    }
 }

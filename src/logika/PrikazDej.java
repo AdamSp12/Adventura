@@ -16,7 +16,6 @@ public class PrikazDej implements IPrikaz
     
     private HerniPlan hPlan;
     private Set<String> bezdomovecDostal;
-
     //== Konstruktory a tovární metody =============================================
 
     /***************************************************************************
@@ -65,12 +64,14 @@ public class PrikazDej implements IPrikaz
                 case "cigarety":
                 if (!bezdomovecDostal.contains("cigarety"))
                 {
-                    bezdomovecDostal.add("cigarety");
+                    getBezdomovecDostal().add("cigarety");
                     hPlan.getInventar().odeberZInventare("cigarety");
                     prostor.getPostava("bezdomovec").setRec("Nebylo by trochu alkoholu?");
+                    hPlan.vyberProstor("obchod").setZna(true);
                     hPlan.park.setVychod(hPlan.obchod);
                     hPlan.doma.setVychod(hPlan.obchod);
                     hPlan.kasino.setVychod(hPlan.obchod);
+                    updateHerniPlan();
                     vypis = "Díky moc chlape, za to ti řeknu, kde můžeš najít super obchod";
                 }
                 else
@@ -82,13 +83,15 @@ public class PrikazDej implements IPrikaz
                 case "alkohol":
                 if (!bezdomovecDostal.contains("alkohol"))
                 {
-                    bezdomovecDostal.add("alkohol");
+                    getBezdomovecDostal().add("alkohol");
                     hPlan.getInventar().odeberZInventare("alkohol");
                     prostor.getPostava("bezdomovec").setRec("Zzzzzz");
+                    hPlan.vyberProstor("bazar").setZna(true);
                     hPlan.park.setVychod(hPlan.bazar);
                     hPlan.doma.setVychod(hPlan.bazar);
                     hPlan.kasino.setVychod(hPlan.bazar);
                     hPlan.obchod.setVychod(hPlan.bazar);
+                    updateHerniPlan();
                     vypis = "Ty seš vážně stědrej, za to ti řeknu kde můžeš najít super bazar";
                 }
                 else
@@ -107,6 +110,7 @@ public class PrikazDej implements IPrikaz
                hPlan.getInventar().odeberZInventare("alkohol");
                vypis = "Vaši reklamaci přijímám \n" + 
                hPlan.getInventar().zvysStavPenez(200);
+               updateHerniPlan();
             }
             else
             {
@@ -120,14 +124,17 @@ public class PrikazDej implements IPrikaz
             case "mobil":
             hPlan.getInventar().odeberZInventare("mobil");
             vypis = hPlan.getInventar().zvysStavPenez(3200);
+            updateHerniPlan();
             break;
             case "hodinky":
             hPlan.getInventar().odeberZInventare("hodinky");
             vypis = hPlan.getInventar().zvysStavPenez(5000);
+            updateHerniPlan();
             break;
             case "obraz":
             hPlan.getInventar().odeberZInventare("obraz");
             vypis = hPlan.getInventar().zvysStavPenez(10000);
+            updateHerniPlan();
             break;
             default:
             vypis = "Tak za tohle vám vážně peníze nedám";
@@ -143,4 +150,28 @@ public class PrikazDej implements IPrikaz
     public String getNazev() {
         return NAZEV;
     }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
+    }
+
+    /**
+     * @return the bezdomovecDostal
+     */
+    public Set<String> getBezdomovecDostal() {
+        return bezdomovecDostal;
+    }
+
+    /**
+     * @param bezdomovecDostal the bezdomovecDostal to set
+     */
+    public void setBezdomovecDostal(Set<String> bezdomovecDostal) {
+        this.bezdomovecDostal = bezdomovecDostal;
+    }
+
+    /**
+     * @return the obchodNavstivil
+     */
+
+
 }

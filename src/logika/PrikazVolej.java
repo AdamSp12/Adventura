@@ -46,15 +46,18 @@ public class PrikazVolej implements IPrikaz
         {
             case "608748222":
             hPlan.park.vlozPostavu(hPlan.kamarad);
+            updateHerniPlan();
             vypis = "Ahoj, myslím, že bych ti mohl alespoň trochu pomoct, sejdeme se v parku, \n"
             + "budu tam na tebe čekat.";
             break;
             case "158":
             vypis = "Na policii jsi ohlásil, že jsi vydírán, pachatel byl dopaden. Vyhrál jsi!";
             hra.setKonecHry(true);
+            updateHerniPlan();
             break;
             default: vypis = "Zadané číslo neexistuje";
         }
+        updateHerniPlan();
         return vypis;
     }
     
@@ -66,5 +69,9 @@ public class PrikazVolej implements IPrikaz
     @Override
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
 }

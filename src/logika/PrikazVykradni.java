@@ -61,6 +61,7 @@ public class PrikazVykradni implements IPrikaz
                 "Prodavač byl připravený a zavolal policii \n" +
                 "Prohrál jsi!";
                 hra.setKonecHry(true);
+                updateHerniPlan();
             }
             else
             {
@@ -69,17 +70,20 @@ public class PrikazVykradni implements IPrikaz
                 "Jen tak tak jsi utekl domů \n" + 
                 hPlan.getInventar().zvysStavPenez(23000);
                 hPlan.setAktualniProstor(hPlan.doma);
+                updateHerniPlan();
             }
             break;
             case "kasino":
             vypis = "Byl jsi dopaden \n" + 
             "Prohrál jsi!";
             hra.setKonecHry(true);
+            updateHerniPlan();
             break;
             case "bazar":
             vypis = "Byl jsi dopaden \n" + 
             "Prohrál jsi!";
             hra.setKonecHry(true);
+            updateHerniPlan();
             break;
             default:
             vypis = "Tuto lokaci nelze vykrást";
@@ -89,6 +93,10 @@ public class PrikazVykradni implements IPrikaz
     
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
     
 }

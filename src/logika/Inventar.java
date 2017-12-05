@@ -1,8 +1,14 @@
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package logika;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import utils.Observer;
+import utils.Subject;
 
 
 
@@ -12,8 +18,9 @@ import java.util.HashMap;
  * @author    Adam Spivák
  * @version   02.01.2017
  */
-public class Inventar
+public class Inventar implements Subject
 {
+    private List<Observer> listObserveru = new ArrayList<Observer>();
     private Map<String, Vec> obsahInventare; //atribut pro uchování obsahu inventáře
     private int stavPenez;
     private static final int MAX_POCET = 4; // maximální počet věcí v inventáři
@@ -45,6 +52,7 @@ public class Inventar
         obsahInventare.put(vec.getNazev(), vec);
         return "Věc byla přidána do inventáře";
     }
+
     return "Věc nebyla přidána, v inventáři není místo";
     }
     
@@ -118,7 +126,7 @@ public class Inventar
        if((stavPenez - castka) >= 0)
        {
         stavPenez = stavPenez - castka;
-        return "Došlo ke snížení stavu peněz... Aktuální stav: " + stavPenez;
+        return "Došlo ke snížení stavu peněz";
        }
        else
        {
@@ -134,7 +142,7 @@ public class Inventar
     public String zvysStavPenez(int castka)
     {
         stavPenez = stavPenez + castka;
-        return "Došlo ke zvýšení stavu peněz... Aktuální stav: " + stavPenez;
+        return "Došlo ke zvýšení stavu peněz";
     }
     
     /**
@@ -142,10 +150,11 @@ public class Inventar
      * 
      * @return datová kolekce inventáře
      */
-    public Map<String,Vec> getInventar()
+    public Map<String,Vec> getObsahInventare()
     {
         return obsahInventare;
     }
+    
     
     /**
      * Metoda vrátí aktuální stav peněz
@@ -164,5 +173,22 @@ public class Inventar
     public void setStavPenez(int stav)
     {
         stavPenez = stav;
+    }
+    
+    @Override
+    public void registerObserver(Observer observer) {
+        listObserveru.add(observer);
+    }
+
+    @Override
+    public void deleteObserver(Observer observer) {
+        listObserveru.remove(observer);
+    }
+
+    @Override
+    public void notifyAllObservers() {
+        for (Observer listObserveruItem : listObserveru) {
+            listObserveruItem.update();
+        }
     }
 }

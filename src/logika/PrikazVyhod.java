@@ -13,6 +13,7 @@ public class PrikazVyhod implements IPrikaz
     private static final String NAZEV = "vyhod";
     private HerniPlan hPlan;
     private Inventar inventar;
+    private Vec vec;
 
     //== KONSTRUKTORY A TOVÁRNÍ METODY =========================================
     /***************************************************************************
@@ -40,15 +41,22 @@ public class PrikazVyhod implements IPrikaz
             return "Nevím co mám vyhodit";
         }
         String jmenoVeci = parametry[0];
-        if(inventar.getInventar().containsKey(jmenoVeci))
+        if(inventar.getObsahInventare().containsKey(jmenoVeci))
         {
+            vec = inventar.getVec(jmenoVeci);
             inventar.odeberZInventare(jmenoVeci);
-            return "Věc '" + jmenoVeci + "' byla odebrána z inventáře";
+            hPlan.getAktualniProstor().vlozVec(vec);
+            updateHerniPlan();
+            return "Věc '" + jmenoVeci + "' byla odebrána z inventáře a zůstala v aktuálním prostoru";
         }
         return "Tato věc se nenachází v inventáři";
         }
         @Override
     public String getNazev() {
         return NAZEV;
+    }
+    @Override
+    public void updateHerniPlan() {
+        hPlan.notifyAllObservers();
     }
 }

@@ -1,18 +1,20 @@
 package uiText;
 
 
-import java.io.*;
 import java.util.Scanner;
 import logika.IHra;
 /**
- * Class TextoveRozhrani
+ *  Class TextoveRozhrani
  * 
- * Toto je uživatelského rozhraní aplikace Adventura
- * Tato třída vytváří instanci třídy Hra, která představuje logiku aplikace.
- * Čte vstup zadaný uživatelem a předává tento řetězec logice a vypisuje odpověď logiky na konzoli.
+ *  Toto je uživatelského rozhraní aplikace Adventura
+ *  Tato třída vytváří instanci třídy Hra, která představuje logiku aplikace.
+ *  Čte vstup zadaný uživatelem a předává tento řetězec logice a vypisuje odpověď logiky na konzoli.
+ *  Pokud chcete hrát tuto hru, vytvořte instanci této třídy
+ *  a poté na ní vyvolejte metodu "hraj". 
+ *  
  *
- * @author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Jan Riha
- * @version    ZS 2016/2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
+ *@version    pro školní rok 2014/2015
  */
 
 public class TextoveRozhrani {
@@ -32,7 +34,6 @@ public class TextoveRozhrani {
      */
     public void hraj() {
         System.out.println(hra.vratUvitani());
-        System.out.println();
 
         // základní cyklus programu - opakovaně se čtou příkazy a poté
         // se provádějí do konce hry.
@@ -40,38 +41,11 @@ public class TextoveRozhrani {
         while (!hra.konecHry()) {
             String radek = prectiString();
             System.out.println(hra.zpracujPrikaz(radek));
-            System.out.println();
         }
 
         System.out.println(hra.vratEpilog());
     }
-    
-    public void hrajZeSouboru(String soubor) {
-        System.out.println("Nacitam prikazy ze souboru " + soubor);
-        
-        try (BufferedReader ctec = new BufferedReader(new FileReader(soubor))) {
-            
-            System.out.println(hra.vratUvitani());
-            System.out.println();
-            
-            String radek = ctec.readLine();
-            while (!hra.konecHry() && radek != null) {
-                System.out.println("* " + radek + " *");
-                System.out.println(hra.zpracujPrikaz(radek));
-                System.out.println();
-                
-                radek = ctec.readLine();
-            }
 
-            System.out.println(hra.vratEpilog());
-            
-        } catch (FileNotFoundException e) {
-            System.out.println("Soubor '" + soubor + "' nelze otevřít\n" + e);
-        } catch (IOException e) {
-            System.out.println("Chyba při čtení ze souboru\n" + e);
-        }
-    }
-    
     /**
      *  Metoda přečte příkaz z příkazového řádku
      *

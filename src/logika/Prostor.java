@@ -1,5 +1,6 @@
 package logika;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.stream.Collectors;
+import utils.Subject;
+import utils.Observer;
 
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
@@ -21,14 +24,17 @@ import java.util.stream.Collectors;
  * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Jan Riha, Adam Spivak
  * @version ZS 2016/2017
  */
-public class Prostor {
+public class Prostor implements Subject {
 
     private String nazev;
     private String popis;
     private Set<Prostor> vychody;   // obsahuje sousední místnosti
-    private Map<String, Vec> veci; //věcu v prostoru
+    private Map<String, Vec> veci; //věci v prostoru
     private Map<String, Postava> postavy; //postavy v prostoru
-
+    private boolean zna;
+    private double posX;
+    private double posY;
+    private List<Observer> listObserveru = new ArrayList<Observer>();
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
      * před domem"
@@ -37,9 +43,12 @@ public class Prostor {
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
      */
-    public Prostor(String nazev, String popis) {
+    public Prostor(String nazev, String popis, boolean zna, double posX, double posY) {
         this.nazev = nazev;
         this.popis = popis;
+        this.zna = zna;
+        this.posX = posX;
+        this.posY = posY;
         vychody = new HashSet<>();
         veci = new HashMap<>();
         postavy = new HashMap<>();
@@ -303,4 +312,82 @@ public class Prostor {
     {
         return postavy.containsKey(nazev);
     }
+    
+    
+    public Map<String,Vec> getVeciVProstoru()
+    {
+        return veci;
+    }
+    
+    public Map<String,Postava> getPostavyVProstoru()
+    {
+        return postavy;
+    }
+    
+
+    /**
+     * @return the posX
+     */
+    public double getPosX() {
+        return posX;
+    }
+
+    /**
+     * @param posX the posX to set
+     */
+    public void setPosX(double posX) {
+        this.posX = posX;
+    }
+
+    /**
+     * @return the posY
+     */
+    public double getPosY() {
+        return posY;
+    }
+
+    /**
+     * @param posY the posY to set
+     */
+    public void setPosY(double posY) {
+        this.posY = posY;
+    }
+    
+        /**
+     * @return the navstivil
+     */
+    public boolean getZna() {
+        return zna;
+    }
+
+    /**
+     * @param navstivil the navstivil to set
+     */
+    public void setZna (boolean zna) {
+        this.zna = zna;
+    }
+    
+    @Override
+    public void registerObserver(Observer observer) {
+        listObserveru.add(observer);
+    }
+    /**
+     * Zrušení observeru
+     * @param observer Observer
+     */
+    @Override
+    public void deleteObserver(Observer observer) {
+        listObserveru.remove(observer);
+    }
+    /**
+     * Oznámení observeru
+     */   
+    @Override
+    public void notifyAllObservers() {
+        for (Observer listObserveruItem : listObserveru) {
+            listObserveruItem.update();
+        }
+    }
+
+
 }
